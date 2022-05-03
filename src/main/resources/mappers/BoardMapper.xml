@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.kongam.mapper.BoardMapper">
+    <resultMap id="boardMap" type="hashmap">
+        <result property="boardIdx" column="board_idx"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="hit" column="hit"/>
+    </resultMap>
+
+    <select id="getList" parameterType="String" resultMap="boardMap">
+        select b.board_idx, b.title, b.created_at, b.hit from board b, category c where c.category = #{ctg} and c.category_idx = b.category_idx
+    </select>
+
+    <select id="getPagingList" parameterType="hashmap" resultMap="boardMap">
+        select b.board_idx, b.title, b.created_at, b.hit
+        from board b, category c
+        where c.category = #{ctg} and c.category_idx = b.category_idx
+        order by b.board_idx desc limit #{startPageNum}, #{records};
+    </select>
+
+    <select id="getCategoryList" resultType="hashmap">
+        select * from category
+    </select>
+
+    <select id="getDetails" parameterType="Long" resultMap="boardMap">
+        select * from board where board_idx = #{boardIdx}
+    </select>
+
+    <insert id="create" parameterType="hashmap" useGeneratedKeys="true" keyProperty="board_idx" keyColumn="board_idx">
+        insert into board (title, content, category_idx ,created_at, hit) values ( #{title}, #{content}, #{category},now(), 0 )
+    </insert>
+
+    <update id="hitUp" parameterType="Long">
+        update board set hit = hit+1 where board_idx = #{boardIdx}
+    </update>
+</mapper>

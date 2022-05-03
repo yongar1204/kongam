@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style_normal.css">
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="./css/2022/common.css">
+    <link rel="stylesheet" href="./css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="./js/2022/jquery-1.11.0.min.js"></script>
+    <script src="./js/2022/slick.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">   
+        $(function(){
+            $("#header").load("header.html");
+            $("#header").addClass('sub');
+            $("#footer").load("footer.html");
+        })        		
+    </script>
+    
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>
+    <header id="header"></header>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-business">
+            <div class="txt" data-aos="fade-up">
+                <strong>사업분야</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_25">
+                <button class="tablinks" onClick="location.href='sub0201.html'">재난ㆍ재해사업</button>
+                <button class="tablinks active" onClick="location.href='sub0202.html'">공간정보사업</button>
+                <button class="tablinks" onClick="location.href='sub0203.html'">SI사업</button>
+                <button class="tablinks" onClick="location.href='sub0204.html'">모바일사업</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="business-area">
+            <div class="content">    
+                <div id="business02-wrap" class="tabcontent_tab" style="display: block;">                    
+                    <h3>공간정보사업</h3>
+                    <p class="mb40">㈜공감아이티는 Opensource 및 상용GISS/W를 이용한 웹기반 공간정보통합 관리시스템 및 공간행정업무 맞춤형 솔루션을 개발하여<br>
+                        지방자치단체를 대상으로 보급하고 있습니다. 각 기관에서 보유하고 있는 공간정보와 실시간 정보 융합기술을 활용하여 다양한 분야에 활용할 수 있습니다.</p>
+                    <div class="business"></div>
+                    <h3>공간정보시스템 적용사례</h3>
+                    <div class="graybox" id="case">
+                        <div>
+                            <p><img src="./images/business0601.gif"></p>
+                            <dl>
+                                <dt>도시기반시설물 관리시스템</dt>
+                                <dd>지자체에서 보유하고 운영, 관리중인 도로와 7대 지하 시설물(전기,통신,가스,난방등)을 대상으로 웹GIS기술을 통해 통합하여 서비스</dd>
+                                <dd>도시기반시설물을 한눈에 파악할 수 있고, 굴착시 안전사고 예방과 시설물 관리업무에<br>
+                                    대한 능동적 관리체계 구축</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <p><img src="./images/business0602.gif"></p>
+                            <dl>
+                                <dt>생활지리정보시스템</dt>
+                                <dd>기 구축된 공간정보를 기반으로 부동산, 교통,생활편의, 교육, 복지 등 실생활에 밀접한<br>
+                                    공간 정보와 행정정보를 융합하여 서비스</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <p><img src="./images/business0603.gif"></p>
+                            <dl>
+                                <dt>항공사진조회시스템</dt>
+                                <dd>최신 항공사진과 과거 항공사진을 연도별로 비교하여 토지 및 지형의 변화,<br>
+                                    토지이용현황 등을 확인해 행정자료로 활용</dd>
+                                <dd>지적민원, 재산관리, 도시건축, 산림, 농지관리 등 각종 인허가 부서에서<br>
+                                    대민 행정 서비스에 폭넓게 활용 가능</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+<script>
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+</script>
+</html>

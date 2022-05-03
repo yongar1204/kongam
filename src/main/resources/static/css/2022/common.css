@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+@font-face {
+font-family:'Noto Sans KR';
+font-style:normal;
+font-weight:400;
+src: url('../../fonts/NotoSansKR-Regular.eot');
+src: url('../../fonts/NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'),
+	 url(../../fonts/NotoSansKR-Regular.woff2) format('woff2'),
+	 url(../../fonts/NotoSansKR-Regular.woff) format('woff'),
+	 url(../../fonts/NotoSansKR-Regular.ttf) format('opentype');
+}
+
+@font-face {
+font-family:'Noto Sans KR';
+font-style:normal;
+font-weight:bold;
+src: url('../../fonts/NotoSansKR-Bold.eot');
+src: url('../../fonts/NotoSansKR-Bold.eot?#iefix') format('embedded-opentype'),
+	 url(../../fonts/NotoSansKR-Bold.woff2) format('woff2'),
+	 url(../../fonts/NotoSansKR-Bold.woff) format('woff'),
+	 url(../../fonts/NotoSansKR-Bold.ttf) format('opentype');
+}
+
+
+@font-face {
+	font-family:'roboto';
+	font-style:normal;
+	font-weight:400;
+	src: url('../../fonts/roboto-Regular.eot');
+	src: url('../../fonts/roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		 url(../../fonts/roboto-Regular.woff2) format('woff2'),
+		 url(../../fonts/roboto-Regular.woff) format('woff'),
+		 url(../../fonts/roboto-Regular.ttf) format('opentype');
+	}
+	
+	@font-face {
+	font-family:'roboto';
+	font-style:normal;
+	font-weight:bold;
+	src: url('../../fonts/roboto-Bold.eot');
+	src: url('../../fonts/roboto-Bold.eot?#iefix') format('embedded-opentype'),
+		 url(../../fonts/roboto-Bold.woff2) format('woff2'),
+		 url(../../fonts/roboto-Bold.woff) format('woff'),
+		 url(../../fonts/roboto-Bold.ttf) format('opentype');
+	}
+
+
+	@font-face {
+	font-family:'ubuntu';
+	font-style:normal;
+	font-weight:400;
+	src: url('../../fonts/ubuntu-Regular.eot');
+	src: url('../../fonts/ubuntu-Regular.eot?#iefix') format('embedded-opentype'),
+			url(../../fonts/ubuntu-Regular.woff2) format('woff2'),
+			url(../../fonts/ubuntu-Regular.woff) format('woff'),
+			url(../../fonts/ubuntu-Regular.ttf) format('opentype');
+	}
+	
+	@font-face {
+	font-family:'ubuntu';
+	font-style:normal;
+	font-weight:bold;
+	src: url('../../fonts/ubuntu-Bold.eot');
+	src: url('../../fonts/ubuntu-Bold.eot?#iefix') format('embedded-opentype'),
+			url(../../fonts/ubuntu-Bold.woff2) format('woff2'),
+			url(../../fonts/ubuntu-Bold.woff) format('woff'),
+			url(../../fonts/ubuntu-Bold.ttf) format('opentype');
+	}
+
+@font-face {
+    font-family: 'Questrial';
+	src: url('../../fonts/Questrial.eot');
+	src: url('../../fonts/Questrial.eot?#iefix') format('embedded-opentype'),
+		 url(../../fonts/Questrial.woff2) format('woff2'),
+		 url(../../fonts/Questrial.woff) format('woff'),
+		 url(../../fonts/Questrial.ttf) format('opentype');
+    src: url('../../fonts/Questrial.ttf');
+    src: url('../../fonts/Questrial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quicksand';
+	src: url('../../fonts/quicksand.eot');
+	src: url('../../fonts/quicksand.eot?#iefix') format('embedded-opentype'),
+		 url(../../fonts/quicksand.woff2) format('woff2'),
+		 url(../../fonts/quicksand.woff) format('woff'),
+		 url(../../fonts/quicksand.ttf) format('opentype');
+    src: url('../../fonts/quicksand.ttf');
+    src: url('../../fonts/quicksand.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset with normalize */
+* {
+	word-break:normal;
+	box-sizing:border-box;
+	-o-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -webkit-text-size-adjust:none;
+}
+/* 
+*:before,
+*:after{box-sizing:border-box; transition:all 0.2s ease;} */
+
+*:hover{transition:all 0.2s ease;}
+
+html, body {height:100%;}
+body {
+	margin:0;padding:0;
+	color:#555;font-weight:400;font-size:15px;font-family:'Noto Sans KR', sans-serif;line-height:1.5em;letter-spacing:-.05em;
+	background-color:#fff;
+	word-break:keep-all;
+	
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,p,button,iframe,th,td,figure,aside {margin:0;padding:0;box-sizing:border-box;}
+/* input {-webkit-appearance:none;} */
+h1,h2,h3,h4,h5,h6 {font-weight:500;font-family:'Noto Sans KR', sans-serif;line-height:1.25em;letter-spacing:-.05em;}
+img,fieldset,iframe,button {border:0 none;}
+li {list-style:none;}
+button {font-size:15px;font-family:'Noto Sans KR', sans-serif;background:transparent;cursor:pointer;vertical-align:middle;margin:0;}
+button span {display:none;}
+button, a {color:#555;}
+input[type="text"] {
+	font-family:'Noto Sans KR', sans-serif;
+	/* remove input shadow */
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	/* appearance:none; 웹호환성 : 존재하지 않는 속성입니다 */
+}
+a {text-decoration:none;}
+table, th, td {border-collapse:collapse;border-spacing:0;}
+legend, hr {display:none;}
+caption {position:absolute;text-indent:-9999px;height:0;font-size:0;line-height:0;}
+form {display:inline;}
+i, address, em{font-style:normal;}
+b{font-weight:normal;}
+/* skip navigation */
+#skipToContent{position:absolute;width:100%;z-index: 9999999;top: 0;left: 0;}
+#skipToContent dt{overflow:hidden;height:0;font-size:1px;}
+#skipToContent a{display:block;overflow:hidden;position:absolute;top:-80px;left:0;width:100%;height:40px;background:rgba(0,0,0,.75);font-size:13px;color:#fff;text-align:center;line-height:38px;transition:all 0.2s ease;z-index:10000;}
+#skipToContent a:focus{top:0;}
+
+
+
+.mobileVer{display:none;}
+
+
+
+/* ==== 800px 이하 일때 ==== */ @media only screen and (max-width:800px) {
+
+	/*
+		800px 미만 해상도의 모바일 기기를 위한 코드를 작성한다.
+		모든 해상도에서 이 코드가 실행됨.
+		미디어 쿼리를 지원하지 않는 모바일 기기를 위해 미디어 쿼리 구문을 사용하지 않는다.
+	*/
+	body {
+		-webkit-appearance:none;
+		-webkit-text-size-adjust:none;
+		-webkit-font-smoothing:antialiased;
+		-webkit-overflow-scrolling:touch;
+	}
+	.mobileVer{display:block;}
+}

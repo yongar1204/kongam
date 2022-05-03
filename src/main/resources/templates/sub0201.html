@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style_normal.css">
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="./css/2022/common.css">
+    <link rel="stylesheet" href="./css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="./js/2022/jquery-1.11.0.min.js"></script>
+    <script src="./js/2022/slick.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">   
+        $(function(){
+            $("#header").load("header.html");
+            $("#header").addClass('sub');
+            $("#footer").load("footer.html");
+        })        		
+    </script>
+    
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>
+    <header id="header"></header>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-business">
+            <div class="txt" data-aos="fade-up">
+                <strong>사업분야</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_25">
+                <button class="tablinks active" onClick="location.href='sub0201.html'">재난ㆍ재해사업</button>
+                <button class="tablinks" onClick="location.href='sub0202.html'">공간정보사업</button>
+                <button class="tablinks" onClick="location.href='sub0203.html'">SI사업</button>
+                <button class="tablinks" onClick="location.href='sub0204.html'">모바일사업</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="business-area">
+            <div class="content">                
+                <div id="business01-wrap" class="tabcontent_tab" style="display: block;">                    
+                    <h3>재난ㆍ재해사업</h3>
+                    <p class="mb40">최근 들어 재난의 대형화ㆍ 복잡화에 따른 통합대응의 필요성이 대두되고 있고 재난안전에 대한 정부정책이 강화됨으로써 안전에 대한 국민의 욕구와 민감성이 매우<br>
+                        높아지고 있습니다. 대응체계를 강화하고자 시스템 개발에 주력하고 있습니다.</p>
+                    <div class="business"></div>
+                    <h3>통합 재난관리 시스템 구성</h3>
+                    <div class="graybox" id="diagram">
+                        <dl>
+                            <dt>통합 재난관리 시스템 구성</dt>
+                            <dd><img src="./images/business0501.gif"></dd>
+                        </dl>
+                        <dl class="mt50">
+                            <dt>외부연계</dt>
+                            <dd><img src="./images/business0502.gif"></dd>
+                        </dl>
+                        <dl class="mt50">
+                            <dt>사용자</dt>
+                            <dd>대국민ㆍ재난전문가ㆍ유관기관ㆍ업무담당자</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+<script>
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+</script>
+</html>

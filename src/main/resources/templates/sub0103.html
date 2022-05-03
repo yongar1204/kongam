@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style_normal.css">
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="./css/2022/common.css">
+    <link rel="stylesheet" href="./css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="./js/2022/jquery-1.11.0.min.js"></script>
+    <script src="./js/2022/slick.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">   
+        $(function(){
+            $("#header").load("header.html");
+            $("#header").addClass('sub');
+            $("#footer").load("footer.html");
+        })        		
+    </script>
+    
+    </head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>    
+    <header id="header"></header>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-company">
+            <div class="txt" data-aos="fade-up">
+                <strong>회사소개</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_25">
+                <button class="tablinks" onClick="location.href='sub0101.html'">인사말</button>
+                <button class="tablinks" onClick="location.href='sub0102.html'">연혁</button>
+                <button class="tablinks active" onClick="location.href='sub0103.html'">조직도</button>
+                <button class="tablinks" onClick="location.href='sub0104.html'">오시는길</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="company">
+            <div id="organization" class="tabcontent_scroll">
+                <div class="content">
+                    <h3>조직도</h3>
+                    <div class="organization">
+                        <div id="item01">대표이사</div>
+                        <div id="item02">전략사업부</div>
+                        <div id="item03">기업부설연구소</div>
+                        <div id="item04">공공사업부
+                            <ul>
+                                <li>운영지원팀</li>
+                                <li>사업팀</li>
+                            </ul>
+                        </div>
+                        <div id="item05">경영지원부</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+<!-- <script>
+    //sticky
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("tabbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+    }
+</script> -->
+</html>

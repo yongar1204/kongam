@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/common :: html-head">
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>    
+    <header id="header"> <div class="pcContainer" th:replace="fragment/common :: header"></div> </header>
+    <article class="popup-contactUs" th:replace="fragment/common :: popup-contactUs"></article>
+    <div class="wrap">
+        <div class="header-wrap">             
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-support">
+            <div class="txt" data-aos="fade-up">
+                <strong>고객지원</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_33">
+                <button class="tablinks active" onClick="openCity(event, 'support01-wrap')">공지사항</button>
+                <button class="tablinks" onClick="openCity(event, 'support02-wrap')">뉴스&보도자료</button>
+                <button class="tablinks" onClick="openCity(event, 'support03-wrap')">문의하기</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="support-area">
+            <div class="content">
+                <!-- 게시판 + 상세 : S  -->
+                <article class="table-detail-01">
+                    <ul class="td-header">
+                        <li>
+                            <h2>웹디자이너 채용공고 (UI/UX/웹어플리케이션)</h2>
+                            <ul class="info">
+                                <li class="num">2022-04-25</li>
+                                <li><b>작성자</b><span class="num">관리자</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="attachment-download"> 
+                                <a href="/">청렴도 측정을 위한 개인정보 제3자 제공 공고.HWP [64 KB]</a> 
+                                <a href="/">청렴도 측정을 위한 개인정보 제3자 제공 공고.HWP [64 KB]</a> 
+                            </div> 
+                        </li>
+                    </ul>
+                    <div class="td-content">
+                        <p>
+                            김진 기자,김민수 기자 = 대규모 환불 사태를 일으킨 머지포인트의 운영사 머지플러스 본사 등에 대한 경찰의 압수수색이 12시간여 만에 종료됐다.
+                            <br />
+                            <br />
+                            서울경찰청 금융범죄수사대는 25일 오후 10시10분쯤 영등포구 머지플러스 본사에 대한 압수수색을 종료했다.
+                            <br />
+                            <br />
+                            경찰은 이날 오후 5시45분쯤 현장에서 압수한 물품을 한 차례 운반했으며 이후 머지플러스와 머지서포터 전산서버 다운로드를 진행한 것으로 전해졌다.
+                            <br />
+                            <br />
+                            머지서포터와 강남·성동 등 결제대행사 3곳의 압수수색도 이에 앞서 완료됐다.
+                            <br />
+                            <br />
+                            경찰의 압수수색은 이날 오전 10시15분 시작했으며 본사 현장에는 권남희 대표와 변호인들이 입회했다. 머지플러스 본사는 건물 2~5층, 9~10층을 사용하는 것으로 알려졌다.
+                            <br />
+                            <br />
+                            경찰은 전자금융업 등록을 하지 않고 전자금융업상 선불전자지급수단 영업을 한 혐의(전자금융거래법 위반)로 입건된 권남희 대표와 권보군 최고운영책임자(CSO), 권강현 이사에 대해 이날 출국금지 조치를 내렸다.
+                            <br />
+                            <br />
+                            전자금융거래법상 2가지 업종 이상에서 포인트를 사용하려면 '전자금융업자'로 등록해야 하며 미등록 영업을 하면 3년 이하 징역 또는 2000만원 이하 벌금에 처해진다.
+                            <br />
+                            <br />
+                            경찰은 이날 확보한 압수물을 분석한 뒤 이들을 불러 조사할 것으로 보인다. 경찰 관계자는 "피해 금액이 크고 피해자가 많기 때문에 신속하고 엄정하게 수사할 예정"이라고 말했다.
+                        </p>
+                    </div>
+                    <ul class="board-pagination">
+                        <li class="prev"> 
+                            <span> <i class="ico-arrow"></i> 이전글 </span>
+                            <a href="/" class="webkitBox">제9회 지방자치의 날 유공자 정부포상 후보자 공모</a>
+                            <span class="num pcVer">2021-07-09</span>
+                        </li>
+                        <li class="next"> 
+                            <span> <i class="ico-arrow"></i> 다음글 </span>
+                            <a href="/" class="webkitBox">제9회 지방자치의 날 유공자 정부포상 후보자 공모</a>
+                            <span class="num pcVer">2021-07-09</span>
+                        </li>
+                    </ul>
+                </article>
+                <div class="linkArea center">
+                    <button type="button" class="grey goList">목록</button>
+                </div>
+                <!-- 게시판 + 상세 : E  -->
+            </div>
+        </section>
+        <footer id="footer"><div class="pcContainer" th:replace="fragment/common :: footer"></div></footer>
+    </div>
+</body>
+<script>
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+    $(document).ready(function (){
+        var bIdx = window.location.pathname.split("/")[1]
+        console.log(bIdx)
+        $.ajax({
+            url : '/api/details/' + bIdx,
+            type : 'GET',
+            dataType: 'JSON',
+            success : function (result){
+                console.log(result)
+                $('.td-content').empty();
+                $('.td-content').append("<div>" + result.content + "</div>")
+                $('.td-header h2').empty();
+                $('.td-header h2').append("<div>" + result.title + "</div>")
+                $('.td-header .info').empty();
+                $('.td-header .info').append("<li class=\"num\">"+result.createdAt+"</li>\n" +
+                    "                                <li><b>작성자</b><span class=\"num\">관리자</span></li>")
+            }
+        })
+
+    })
+</script>
+</html>

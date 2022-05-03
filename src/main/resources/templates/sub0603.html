@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style_normal.css">
+    
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="./css/2022/common.css">
+    <link rel="stylesheet" href="./css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="./js/2022/jquery-1.11.0.min.js"></script>
+    <script src="./js/2022/slick.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">   
+        $(function(){
+            $("#header").load("header.html");
+            $("#header").addClass('sub');
+            $("#footer").load("footer.html");
+        })        		
+    </script>
+    
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>
+    <header id="header"></header>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-business">
+            <div class="txt" data-aos="fade-up">
+                <strong>빅데이터서비스</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_25">
+                <button class="tablinks" onClick="location.href='sub0604.html'">INTOUS 서비스란?</button>
+                <button class="tablinks" onClick="location.href='sub0601.html'">INTOUS QM/MM</button>
+                <button class="tablinks" onClick="location.href='sub0602.html'">INTOUS ESB</button>
+                <button class="tablinks active" onClick="location.href='sub0603.html'">INTOUS ETL</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="business-area">
+            <div class="content">                
+                <div id="business01-wrap" class="tabcontent_tab" style="display: block;">
+                    <h3>INTOUS ETL</h3>
+                    <p class="mb40">Spring Integration FrameWork를 사용 성능과 안정성을 보장, 지오코딩 및 공간자표 변환 등 공간정보 처리 지원</p>
+                    <h3>ETL 주요기능 및 특징</h3>
+                    <div class="graybox mb40">
+                        <div class="img">
+                            <img src="images/ETL01.png">
+                        </div>
+                    </div>
+                    <h3>ETL GUI 화면 예시</h3>
+                    <div class="graybox mb40">
+                        <div class="img">
+                            <img src="images/ETL02.png">
+                        </div>
+                    </div>
+                    <h3>좌표 변화 절차</h3>
+                    <div class="graybox mb40">
+                        <div class="img">
+                            <img src="images/ETL03.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+<script>
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+</script>
+</html>

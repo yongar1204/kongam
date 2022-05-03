@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head th:replace="fragment/common :: html-head">
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>    
+    <header id="header">
+        <div class="pcContainer" th:replace="fragment/common :: header"></div>
+    </header>
+    <article class="popup-contactUs" th:replace="fragment/common :: popup-contactUs"></article>
+    <div class="wrap">
+        <div class="header-wrap">             
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-support">
+            <div class="txt" data-aos="fade-up">
+                <strong>고객지원</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_33">
+                <button id="NOTICE" class="tablinks active" name="공지사항">공지사항</button>
+                <button id="NEWS" class="tablinks" name="뉴스&보도자료">뉴스&보도자료</button>
+                <button class="tablinks disabled">문의하기</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="support-area">
+            <div class="content">
+                <div id="support01-wrap" class="tabcontent_tab" style="display: block;">
+                    <h3>공지사항</h3>
+                    <table class="tbl-board mt20">
+                        <caption>공감아이티 공지사항</caption>
+                        <colgroup>
+                            <col style="width:8%">
+                            <col style="width:59%">
+                            <col style="width:15%">
+                            <col style="width:8%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>날짜</th>
+                                <th>조회</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8</td>
+                                <td>웹디자이너 모집(UI/UX/웹어플리케이션)</td>
+                                <td>2020-11-01</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>PM 채용공고</td>
+                                <td>2020-10-31</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>2020년 제1기 대학 인턴쉽 교육과정 개설</td>
+                                <td>2020-09-15</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>웹디자이너 모집(UI/UX/웹어플리케이션)</td>
+                                <td>2020-11-01</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>PM 채용공고</td>
+                                <td>2020-10-31</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>2020년 제1기 대학 인턴쉽 교육과정 개설</td>
+                                <td>2020-09-15</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>웹디자이너 모집(UI/UX/웹어플리케이션)</td>
+                                <td>2020-11-01</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>PM 채용공고</td>
+                                <td>2020-10-31</td>
+                                <td>9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="board_pager">
+                        <span class="inner">
+                            <a href="#" class="pageFirst"><img src="./images/btn_page_first.gif" alt="첫페이지"></a>
+                            <a href="#" class="pagePrev"><img src="./images/btn_page_pre.gif" alt="이전페이지"></a>
+                            <a href="#" class="pageNow"><strong>1</strong></a><a href="#" class="pageNone">2</a>
+                            <a href="#" class="pageNext"><img src="./images/btn_page_next.gif" alt="다음페이지"></a>
+                            <a href="#" class="pageLast"><img src="./images/btn_page_last.gif" alt="마지막페이지"></a>
+                        </span>
+                    </div>
+                </div>
+                <div id="support02-wrap" class="tabcontent_tab">
+                    <h3>뉴스&보도자료</h3>
+                    <table class="tbl-board mt20">
+                        <caption>문의하기</caption>
+                        <colgroup>
+                            <col style="width:8%">
+                            <col style="width:59%">
+                            <col style="width:15%">
+                            <col style="width:8%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>날짜</th>
+                                <th>조회</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>등록 된 내용이 없습니다.</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="board_pager">
+                        <span class="inner">
+                            <a href="#" class="pageFirst"><img src="./images/btn_page_first.gif" alt="첫페이지"></a>
+                            <a href="#" class="pagePrev"><img src="./images/btn_page_pre.gif" alt="이전페이지"></a>
+                            <a href="#" class="pageNow"><strong>1</strong></a>
+                            <a href="#" class="pageNext"><img src="./images/btn_page_next.gif" alt="다음페이지"></a>
+                            <a href="#" class="pageLast"><img src="./images/btn_page_last.gif" alt="마지막페이지"></a>
+                        </span>
+                    </div>
+                </div>
+                <div id="support03-wrap" class="tabcontent_tab">
+                    <h3>문의하기</h3>
+                    <table class="tbl-board mt20">
+                        <caption>문의하기</caption>
+                        <colgroup>
+                            <col style="width:8%">
+                            <col style="width:59%">
+                            <col style="width:15%">
+                            <col style="width:8%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>날짜</th>
+                                <th>조회</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>등록 된 내용이 없습니다.</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="board_pager">
+                        <div class="inner">
+                            <a href="#" class="pageFirst"><img src="./images/btn_page_first.gif" alt="첫페이지"></a>
+                            <a href="#" class="pagePrev"><img src="./images/btn_page_pre.gif" alt="이전페이지"></a>
+                            <a href="#" class="pageNow"><strong>1</strong></a>
+                            <a href="#" class="pageNext"><img src="./images/btn_page_next.gif" alt="다음페이지"></a>
+                            <a href="#" class="pageLast"><img src="./images/btn_page_last.gif" alt="마지막페이지"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="pcContainer" th:replace="fragment/common :: footer"></div>
+        </footer>
+    </div>
+</body>
+<script>
+    $(document).ready(function (){
+        $.ajax({
+            url: '/api/NOTICE',
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (result) {
+                $('tbody').empty();
+                console.log(result)
+                boardListUp(result)
+                paging(result)
+            }
+        })
+
+        $('.tablinks').click(function (){
+            var category = this.id;
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            this.classList.add("active")
+            $('#support01-wrap h3, #support01-wrap caption').empty();
+            $('#support01-wrap h3').append(this.name)
+            $('#support01-wrap caption').append(this.name)
+
+            $.ajax({
+                url: '/api/'+category,
+                type: 'GET',
+                dataType: 'JSON',
+                success: function (result) {
+                    $('tbody').empty();
+                    console.log(result)
+                    boardListUp(result)
+                    paging(result)
+                }
+            })
+        })
+
+        $('.inner').off('click', '.pn').on('click', '.pn' ,function (){
+            var pn = this.classList[2]
+            var category = $('.tablinks.active')[0].id
+            $.ajax({
+                url: '/api/'+ category + '/' + pn,
+                type: 'GET',
+                dataType: 'JSON',
+                cache: false,
+                success: function (result){
+                    $('tbody').empty();
+                    console.log(result)
+                    boardListUp(result)
+                    paging(result)
+                }
+            })
+        })
+
+        function boardListUp(result){
+            $.each(result.boardList, function (idx, row){
+                $('tbody').append(
+                    "<tr>" +
+                    "<td>" + row.boardIdx + "</td>" +
+                    "<td><a href='/"+row.boardIdx+"'>" + row.title + "</a></td>" +
+                    "<td>" + row.createdAt + "</td>" +
+                    "<td>" + row.hit + "</td>" +
+                    "</tr>"
+                )
+            })
+        }
+        function paging(result){
+            var first = 1;
+            var preId = result.paging.pageNum -1;
+            var nextId = result.paging.pageNum +1;
+            var last = result.paging.totalPages;
+            $('.inner').empty();
+            $('.inner').append("<a id='firstPn' href='#' class='pn firstP "+first+"'><img src='./images/btn_page_first.gif' alt='처음페이지'></a>")
+            $('.inner').append("<a id='prePn' href='#' class='pn preP "+preId+"'><img src='./images/btn_page_pre.gif' alt='이전페이지'></a>")
+            for (var i=result.paging.startPage; i<=result.paging.lastPage; i++){
+                $('.inner').append("<a href='#' class='pn nowP "+i+"'>"+i+"</a>")
+            }
+            $('.inner').append("<a id='nextPn' href='#' class='pn nextP "+nextId+"'><img src='./images/btn_page_next.gif' alt='다음페이지'></a>")
+            $('.inner').append("<a id='lastPn' href='#' class='pn lastP "+last+"'><img src='./images/btn_page_last.gif' alt='마지막페이지'></a>")
+
+            var firtsPn = document.getElementsByClassName('firstP')[0]
+            var prePn = document.getElementsByClassName('preP')[0]
+            var nowPn = document.getElementsByClassName('nowP')
+            var nextPn = document.getElementsByClassName('nextP')[0]
+            var lastPn = document.getElementsByClassName('lastP')[0]
+            if (result.paging.pageNum === 1){
+                firtsPn.classList.add('disabled')
+                prePn.classList.add('disabled')
+            }
+            for (var i = 0; i<nowPn.length; i++ ){
+                if (nowPn[i].classList.contains(result.paging.pageNum)){
+                    nowPn[i].classList.add('disabled')
+                }
+            }
+            if (result.paging.pageNum === result.paging.totalPages){
+                nextPn.classList.add('disabled');
+                lastPn.classList.add('disabled');
+            }
+        }
+    })
+
+
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+</script>
+</html>

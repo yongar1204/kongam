@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style_normal.css">
+    
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="./css/2022/common.css">
+    <link rel="stylesheet" href="./css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="./js/2022/jquery-1.11.0.min.js"></script>
+    <script src="./js/2022/slick.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">   
+        $(function(){
+            $("#header").load("header.html");
+            $("#header").addClass('sub');
+            $("#footer").load("footer.html");
+        })        		
+    </script>
+    
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>    
+    <header id="header"></header>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-recruit">
+            <div class="txt" data-aos="fade-up">
+                <strong>채용안내</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_33">
+                <button class="tablinks" onClick="location.href='sub0501.html'">인재상</button>
+                <button class="tablinks active" onClick="location.href='sub0502.html'">복리후생</button>
+                <button class="tablinks" onClick="location.href='sub0503.html'">채용안내/공고</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="recruit-area">
+            <div class="content">                
+                <div id="recruit02-wrap" class="tabcontent_tab" style="display: block;">
+                    <h3>복리후생</h3>
+                    <ul>
+                        <li>
+                            <div><img src="./images/recruit04.png" alt="시계아이콘"></div>
+                            <strong>근무시간</strong>
+                            <ul>
+                                <li>근무시간 : 09:00 ~ 18:00</li>
+                                <li>주 5일 근무제</li>
+                                <li>대체휴일제 적용(관공서와 동일)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><img src="./images/recruit05.png" alt="화분아이콘"></div>
+                            <strong>4대 보험가입</strong>
+                            <ul>
+                                <li>산재, 건강, 고용, 국민연금 가입</li>
+                                <li>건강유지 및 질병예방을 위한 정기적 건강검진 실시</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><img src="./images/recruit06.png" alt="스마일아이콘"></div>
+                            <strong>경조사</strong>
+                            <ul>
+                                <li>경조사유에 따른 경조금 지급 및 휴가 부여</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><img src="./images/recruit07.png" alt="브레인아이콘"></div>
+                            <strong>교육지원</strong>
+                            <ul>
+                                <li>자기개발 도서구입비 지원</li>
+                                <li>신입사원 및 직무향상 교육 지원</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><img src="./images/recruit08.png" alt="컴퓨터아이콘"></div>
+                            <strong>업무환경</strong>
+                            <ul>
+                                <li>듀얼모니터 및 SSD 등 장비 수시<br>업그레이드</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><img src="./images/recruit09.png" alt="자동차아이콘"></div>
+                            <strong>교통지원</strong>
+                            <ul>
+                                <li>야간근무 교통비 지급</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><img src="./images/recruit10.png" alt="집아이콘"></div>
+                            <strong>숙소비 지원</strong>
+                            <ul>
+                                <li>지방 근무시 숙소 지원</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>                
+            </div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+<script>
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+</script>
+</html>

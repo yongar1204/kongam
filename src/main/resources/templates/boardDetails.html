@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="details"></div>
+</div>
+
+<script>
+    $(document).ready(function (){
+        var bIdx = window.location.pathname.split("/")[1]
+        console.log(bIdx)
+        $.ajax({
+            url : '/api/details/' + bIdx,
+            type : 'GET',
+            dataType: 'JSON',
+            success : function (result){
+                console.log(result)
+                $('#details').append(
+                    "<div>" + result.title + "</div>" +
+                    "<div>" + result.content + "</div>")
+            }
+        })
+
+    })
+</script>
+</body>
+</html>

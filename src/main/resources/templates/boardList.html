@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="/static/css/starter-template.css">
+    <script src="/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<div id="board_list">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="cen" scope="col">번호</th>
+                <th class="cen" scope="col">제목</th>
+                <th class="cen" scope="col">날짜</th>
+                <th class="cen" scope="col">조회</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>test</td>
+                <td>2022-04-24</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="pagination">
+    </ul>
+</div>
+<script>
+    $(document).ready(function (){
+        $.ajax({
+            url: '/api/notice/',
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (result) {
+                $('tbody').empty();
+                console.log(result)
+                boardListUp(result)
+                paging(result)
+            }
+        })
+
+        $('.pagination').on('click', '.pn' ,function (){
+            var pn = this.id
+            $.ajax({
+                url: '/api/notice/' + pn,
+                type: 'GET',
+                dataType: 'JSON',
+                cache: false,
+                success: function (result){
+                    $('tbody').empty();
+                    console.log(result)
+                    boardListUp(result)
+                    paging(result)
+                }
+            })
+        })
+
+        function boardListUp(result){
+            $.each(result.boardList, function (idx, row){
+                $('tbody').append(
+                    "<tr>" +
+                    "<td>" + row.boardIdx + "</td>" +
+                    "<td>" + row.title + "</td>" +
+                    "<td>" + row.createdAt + "</td>" +
+                    "<td>" + row.hit + "</td>" +
+                    "</tr>"
+                )
+            })
+        }
+
+        function paging(result){
+            var preId = result.paging.pageNum -1
+            var nextId = result.paging.pageNum +1
+            //previousBtn
+            $('.pagination').empty();
+            $('.pagination').append("<li id="+preId+" class='pn pre'><a th:href='#'>Previous</a></li>")
+            //pageNumBtn
+            for (var i=result.paging.startPage; i<=result.paging.lastPage; i++){
+                $('.pagination').append("<li id='"+i+
+                    "' class='pn'" +i+
+                    "><a th:href ='#'>" + i +"</a></li>")
+
+            }
+            //nextBtn
+            $('.pagination').append("<li id="+nextId+" class='pn next'><a th:href='#'>Next</a></li>")
+
+            var curpn = document.getElementById(result.paging.pageNum)
+            var prepn = document.getElementById(0)
+            var nextpn = document.getElementById(result.paging.totalPages + 1)
+            if (curpn){
+                curpn.classList.add('disabled')
+            }
+            if (prepn){
+                prepn.classList.add('disabled')
+            }
+            if (nextpn){
+                nextpn.classList.add('disabled')
+            }
+        }
+    })
+</script>
+</body>
+</html>

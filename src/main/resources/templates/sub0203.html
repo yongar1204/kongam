@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style_normal.css">
+    
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="./css/2022/common.css">
+    <link rel="stylesheet" href="./css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="./js/2022/jquery-1.11.0.min.js"></script>
+    <script src="./js/2022/slick.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">   
+        $(function(){
+            $("#header").load("header.html");
+            $("#header").addClass('sub');
+            $("#footer").load("footer.html");
+        })        		
+    </script>
+    
+</head>
+<body>
+    <!--AOS 라이브러리-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-sine',
+            /*easing: 'ease-out-back',*/
+            duration: 1000
+        });
+    </script>
+    <header id="header"></header>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="bg"></div>           
+        </div>
+        <section class="sub-visual" id="sub-business">
+            <div class="txt" data-aos="fade-up">
+                <strong>사업분야</strong>
+                <p>공감아이티는 응용 소프트웨어 개발 전문 기업입니다.</p>
+            </div>
+        </section>
+        <div id="tabbar">
+            <div class="button-group w_25">
+                <button class="tablinks" onClick="location.href='sub0201.html'">재난ㆍ재해사업</button>
+                <button class="tablinks" onClick="location.href='sub0202.html'">공간정보사업</button>
+                <button class="tablinks active" onClick="location.href='sub0203.html'">SI사업</button>
+                <button class="tablinks" onClick="location.href='sub0204.html'">모바일사업</button>
+            </div>
+        </div>
+        <section class="sub-contents" id="business-area">
+            <div class="content">
+                <div id="business03-wrap" class="tabcontent_tab" style="display: block;">                    
+                    <h3>SI사업</h3>
+                    <p class="mb40">㈜공감아이티는 고객이 필요로 하는 정보시스템을 직접 컨설팅하고 맞춤형 프로그램을 구축하여 서비스하는 SI 전문 기업입니다.<br>전자정부 표준프레임워크를 기반으로 업무 및 환경분석을 통해 고객이 원하는 최적의 시스템과 환경을 구축하기 위하여 최선을 노력을 다하고 있습니다.</p>
+                    <div class="business"></div>
+                    <h3>주요사업 실적</h3>
+                    <div class="graybox" id="result">
+                        <dl>
+                            <dt>2019년</dt>
+                            <dd>충청남도재난안전포털유지관리</dd>
+                            <dd>위치기반증강현실(AR) 개발지원시스템및콘텐츠구축</dd>
+                            <dd>2019년 농약식품건강안전정보시스템운영</dd>
+                            <dd>작물연구정보화위탁관리용역</dd>
+                            <dd>소방공무원보건안전관리시스템구축</dd>
+                            <dd>천안시공간정보시스템통합유지보수</dd>
+                        </dl>
+                        <dl>
+                            <dt>2018년</dt>
+                            <dd>복합재난예측시나리오재난설정 및 연계모듈개발</dd>
+                            <dd>시계열정사영상관리시스템구축</dd>
+                            <dd>충청남도재난안전포털고도화(2차)사업</dd>
+                            <dd>한국형e-Nav 전자해도공급 및 모니터링시스템개발</dd>
+                            <dd>비점오염저감시설정보시스템자료정비</dd>
+                            <dd>위치기반증강현실(AR) 플랫폼구축용역</dd>
+                        </dl>
+                        <dl>
+                            <dt>2017년</dt>
+                            <dd>충청남도재난안전포털구축</dd>
+                            <dd>3차원 공간정보시스템액티브X 제거사업</dd>
+                            <dd>축산농장종합지원시스템(한우리) 고도화</dd>
+                        </dl>
+                        <dl>
+                            <dt>2016년</dt>
+                            <dd>3차원 생활공간정보시스템액티브X제거사업</dd>
+                            <dd>축산농장종합지원시스템(한우리, 돼지)구축</dd>
+                            <dd>토양환경정보시스템고도화</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+<script>
+    //tab
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent_tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // //sticky
+    // window.onscroll = function() {myFunction()};
+
+    // var navbar = document.getElementById("tabbar");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunction() {
+    // if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky")
+    // } else {
+    //     navbar.classList.remove("sticky");
+    // }
+    // }
+</script>
+</html>

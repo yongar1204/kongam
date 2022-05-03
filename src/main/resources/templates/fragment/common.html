@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="html-head">
+    <meta charset="UTF-8">
+    <title>공감아이티</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/2022/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/style_normal.css">
+
+    <!--AOS 라이브러리-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- CSS file :: 2022 renewal -->
+    <link rel="stylesheet" href="/css/2022/common.css">
+    <link rel="stylesheet" href="/css/2022/layout.css">
+
+    <!-- JS file -->
+    <script src="/js/2022/jquery-1.11.0.min.js"></script>
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/2022/slick.js"></script>
+    <script src="/js/2022/layout.js"></script>
+    <script src="/js/2022/function.js"></script>
+
+    <!-- include file -->
+    <script type="text/javascript">
+        $(function(){
+            // $("#header").load("header.html");
+            $("#header").addClass('sub');
+            // $("#footer").load("footer.html");
+
+        })
+    </script>
+</head>
+<body>
+<!-- JS file -->
+<script src="/js/2022/layout.js"></script>
+
+<div class="pcContainer" th:fragment="header">
+    <h1> <a href="/index" title="홈으로"> 홈으로</a> </h1>
+    <ul class="gnb" id="gnb">
+        <li><a href="sub0101.html">회사소개</a>
+            <!--ul>
+                <li><a href="sub01.html#greeting-wrap">인사말</a></li>
+                <li><a href="sub01.html#history-wrap">연혁</a></li>
+                <li><a href="sub01.html#organization-wrap">조직도</a></li>
+                <li><a href="sub01.html#location-wrap">오시는길</a></li>
+            </ul-->
+            <ul class="sub">
+                <li><a href="sub0101.html">인사말</a></li>
+                <li><a href="sub0102.html">연혁</a></li>
+                <li><a href="sub0103.html">조직도</a></li>
+                <li><a href="sub0104.html">오시는길</a></li>
+            </ul>
+        </li>
+        <li><a href="sub0604.html">솔루션</a>
+            <ul class="sub">
+                <li><a href="sub0604.html">INTOUS 서비스란?</a></li>
+                <li><a href="sub0601.html">INTOUS QM/MM</a></li>
+                <li><a href="sub0602.html">INTOUS ESB</a></li>
+                <li><a href="sub0603.html">INTOUS ETL</a></li>
+            </ul>
+        </li>
+        <li><a href="sub0701.html">비즈니스</a>
+            <ul class="sub">
+                <li><a href="sub0701.html">AI분석활용서비스</a></li>
+                <li><a href="sub0702.html">위치기반 서비스</a></li>
+                <li><a href="sub0703.html">SI/SM 서비스</a></li>
+            </ul>
+        </li>
+        <li><a href="/board">고객지원</a>
+            <ul class="sub">
+                <li><a href="/board">공지사항</a></li>
+                <li><a href="/board">뉴스&보도자료</a></li>
+                <li><a href="/board">문의하기</a></li>
+            </ul>
+        </li>
+        <li><a href="sub0501.html">채용안내</a>
+            <ul class="sub">
+                <li><a href="sub0501.html">인사제도</a></li>
+                <li><a href="sub0502.html">복리후생</a></li>
+                <li><a href="sub0503.html">채용안내/공고</a></li>
+            </ul>
+        </li>
+    </ul>
+    <button type="button" title="문의하기" class="openCU">문의하기</button>
+</div>
+
+<article class="popup-contactUs" th:fragment="popup-contactUs">
+    <div class="cu-wrap">
+        <div class="head">
+            <div class="pcContainer">
+                <h3>contact us</h3>
+                <p>궁금하신 사항은 문의하기를 이용해주세요. 담당자가 자세하게 안내해드리겠습니다.</p>
+                <button type="button" class="close" title="닫기"><i class="ico-close"></i>닫기</button>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="pcContainer">
+                <form id="contactUsForm">
+                    <div class="cont-wrap"><div class="cont-inner">
+                        <div class="tBox">
+                            <label for="Input-1">이름</label>
+                            <input type="text" id="Input-1" name="contact_name" autocomplete="off"  />
+                        </div>
+                        <div class="tBox">
+                            <label for="Input-2">비밀번호</label>
+                            <input type="text" id="Input-2" name="Input-2" autocomplete="off"  />
+                        </div>
+                        <div class="tBox">
+                            <label for="Input-3">이메일 주소</label>
+                            <input type="text" id="Input-3" name="contact_email" autocomplete="off"  />
+                        </div>
+                        <div class="tBox">
+                            <label for="Input-4">홈페이지 주소</label>
+                            <input type="text" id="Input-4" name="Input-4" autocomplete="off"  />
+                        </div>
+                        <div class="tBox">
+                            <label for="Input-5">제목</label>
+                            <input type="text" id="Input-5" name="title" autocomplete="off"  />
+                        </div>
+                        <div class="taBox">
+                            <label for="textarea-1">내용</label>
+                            <textarea id="textarea-1" name="content" cols="20" rows="20"></textarea>
+                        </div>
+                        <div class="cBox">
+                            <input type="checkbox" id="sc-term-00" class="allCheck" />
+                            <label for="sc-term-00"><i class="ico-check"></i><span><b>이메일 수집에 동의합니다.</b>해당 문의에 대한 회신 목적으로 이메일을 수집하며, 상담 후 파기합니다.</span></label>
+                        </div>
+                    </div></div>
+                </form>
+            </div>
+        </div>
+        <div class="foot" th:fragment="footer">
+            <div class="pcContainer">
+                <div class="linkArea center">
+                    <button id="contactUsSubmit" type="button" class="grey">문의하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<div class="pcContainer" th:fragment="footer">
+    <div class="foot-info">
+        <img src="./images/2022/footLogo.svg" alt="공감아이티 푸터로고" />
+        <div class="fi-cont">
+            <div class="address">
+                <dl>
+                    <dt>본사</dt>
+                    <dd>충청남도 계룡시 서금암3길 5, 206호</dd>
+                </dl>
+                <dl>
+                    <dt>연구소</dt>
+                    <dd>대전광역시 유성구 왕가봉로22, 덕원빌딩 502호&nbsp;&nbsp;&nbsp;<b>Tel</b> : 042-822-2799&nbsp;&nbsp;&nbsp;<b>Fax</b> : 042-822-4799</dd>
+                </dl>
+            </div>
+            <p class="copyright">Copyrights © kongamit Inc. All rights reserved.</p>
+        </div>
+    </div>
+    <div class="foot-link">
+        <a href="javascript:alert('준비중입니다.');">이용약관</a>
+        <a  href="javascript:alert('준비중입니다.');">개인정보처리방침</a>
+    </div>
+</div>
+
+
+</body>
+</html>
