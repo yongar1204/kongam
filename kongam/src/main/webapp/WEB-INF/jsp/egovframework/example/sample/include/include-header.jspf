@@ -1,0 +1,16 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="${path}/resources/css/sub.css" rel="stylesheet"/>
+<script src="${path}/resources/js/jquery-1.11.0.min.js"></script>
+<script src="${path}/resources/js/common.js"></script>
+<script src="${path}/resources/js//moment/moment.min.js"></script>
+<title>BX SYSTEM</title>
+<meta charset="EUC-KR" />
+</head>
+<body>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.homepage.mapper.BoardMapper">
+    <resultMap id="boardMap" type="hashmap">
+        <result property="boardIdx" column="board_idx"/>
+        <result property="title" column="title" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="content" column="content" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="createdAt" column="created_at" javaType="String"/>
+        <result property="hit" column="hit"/>
+        <result property="contact_name" column="contact_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="contact_email" column="contact_email" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="category_name" column="category_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+    </resultMap>
+    
+    <resultMap type="hashmap" id="categoryMap">
+    	<result property="category_idx" column="category_idx"/>
+    	<result property="category_name" column="category_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+    </resultMap>
+    
+    <select id="recentPost" resultMap="boardMap" parameterType="Integer">
+    	select * from board WHERE not category_idx IN (4) order by board_idx desc LIMIT #{num};
+    </select>
+
+    <select id="getList" parameterType="String" resultMap="boardMap">
+        select b.board_idx, b.title, b.created_at, b.hit from board b, category c where c.category_name = #{ctg} and c.category_idx = b.category_idx
+    </select>
+
+    <select id="getPagingList" parameterType="hashmap" resultMap="boardMap">
+        select b.board_idx, b.title, b.created_at, b.hit
+        from board b, category c
+        where c.category_name = #{ctg} and c.category_idx = b.category_idx
+        order by b.board_idx desc limit #{startPageNum}, #{records};
+    </select>
+
+    <select id="getCategoryList" resultMap="categoryMap">
+        select * from category
+    </select>
+
+    <select id="getDetails" parameterType="Long" resultMap="boardMap">
+        select b.*, c.category_name from board b, category c where board_idx = #{boardIdx} and b.category_idx = c.category_idx;
+    </select>
+    
+    <select id="pre" parameterType="Long" resultMap="boardMap">
+    	select * from board b
+ 		WHERE
+  		board_idx = (
+    	(SELECT board_idx FROM board where board_idx &lt; #{boardIdx} and category_idx = (select category_idx from board where board_idx = #{boardIdx}) ORDER BY board_idx DESC LIMIT 1));
+    </select>
+    <select id="next" parameterType="Long" resultMap="boardMap">
+    	select * from board b
+ 		WHERE
+  		board_idx = (
+    	(SELECT board_idx FROM board where board_idx &gt; #{boardIdx} and category_idx = (select category_idx from board where board_idx = #{boardIdx}) ORDER BY board_idx LIMIT 1));
+    </select>
+
+    <insert id="create" parameterType="hashmap" useGeneratedKeys="true" keyProperty="board_idx" keyColumn="board_idx">
+        insert into board (title, content, category_idx ,created_at, hit) values ( #{title}, #{content}, #{category},now(), 0 )
+    </insert>
+
+    <update id="hitUp" parameterType="Long">
+        update board set hit = hit+1 where board_idx = #{boardIdx}
+    </update>
+    
+    <insert id="contactUsSave" parameterType="hashmap">
+    	insert into board (title, content, category_idx, created_at, contact_name, contact_email) values ( #{title}, #{content}, #{category}, now(), #{contactName}, #{contactEmail} )
+    </insert>
+    
+    <update id="edit" parameterType="hashmap">
+    	update board set title = #{title}, content=#{content} where board_idx = #{boardIdx};
+    </update>
+    
+    <delete id="delete" parameterType="Long">
+    	delete from board where board_idx = #{bIdx}
+    </delete>
+</mapper>

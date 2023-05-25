@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.homepage.mapper.AccountMapper">
+	<insert id="insertUser" parameterType="hashmap" useGeneratedKeys="true" keyProperty="userIdx" keyColumn="user_idx">
+        insert into user (user_id, password) values ( #{userId}, #{password} )
+    </insert>
+
+    <insert id="userRoleSave" parameterType="Long">
+        insert into user_role (user_idx, role_idx) values ( #{user_idx}, 1 );
+    </insert>
+
+    <resultMap id="userMap" type="egovframework.example.homepage.model.UserDto" autoMapping="true">
+        <id column="user_idx" property="userIdx"/>
+        <result property="userId" column="user_id"/>
+        <result property="password" column="password"/>
+        <collection property="userRoles" column="id" ofType="egovframework.example.homepage.model.UserRoleDto">
+            <result property="idx" column="idx"/>
+            <result property="userIdx" column="user_idx"/>
+            <result property="roleIdx" column="role_idx"/>
+            <association property="role" column="role_idx" javaType="egovframework.example.homepage.model.RoleDto" resultMap="roleMap">
+            </association>
+        </collection>
+    </resultMap>
+    <resultMap id="roleMap" type="egovframework.example.homepage.model.RoleDto">
+        <id property="roleIdx" column="role_idx"/>
+        <result property="roleName" column="role_name"/>
+    </resultMap>
+    <select id="findByUserId" parameterType="String" resultMap="userMap">
+        select u.user_idx, u.user_id, u.password, ur.idx, ur.user_idx, ur.role_idx, r.role_name
+        from user u, user_role ur, role r
+        where u.user_id = #{userId} and u.user_idx = ur.user_idx and ur.role_idx = r.role_idx;
+    </select>
+
+    <select id="findUserIdxByUserId" parameterType="String" resultType="Long">
+        select user_idx from user where user_id = #{userId}
+    </select>
+
+    <select id="selectAll" resultMap="userMap">
+        select * from user
+    </select>
+</mapper>

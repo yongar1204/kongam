@@ -1,0 +1,152 @@
+/* -------------------------------------------------------------------------------- default --------------------------------------------------------------------------------- */
+* {
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	outline:none;
+	-webkit-tap-highlight-color:transparent;
+}
+html,body,div,span,object,iframe,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main,summary,h1,h2,h3,h4,h5,h6,p,blockquote,pre,form,fieldset,legend,input,label,button,textarea,select,textarea,input,table,caption,tbody,tfoot,thead,tr,th,td,b,i,dl,dt,dd,ol,ul,li,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,time,mark,audio,video,a {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+html,body {
+	width:100%;
+	min-height:100%;
+	margin:0;
+	padding:0;
+	font-weight:400;
+	font-family:'Noto Sans KR',sans-serif;
+	color:#464b4f;
+	letter-spacing:0;
+	line-height:normal;
+	word-wrap:break-word;
+	word-break:break-all;
+	background-color:#fff;
+	-webkit-text-size-adjust:none;
+	text-size-adjust:none;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body,select,input,button,textarea,pre {
+}
+body,div,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,p,th,td,input,textarea,select,button,pre,a {
+	font-family:'Noto Sans KR',sans-serif;
+	font-size:17px;
+	font-weight:400;
+	color:#222;
+}
+select,input,img,button {
+	vertical-align:middle;
+}
+ul,ol {
+	list-style-type:none;
+}
+a {
+	color:#666;
+	text-decoration:none;
+}
+a:focus,a:hover {
+	text-decoration:none;
+}
+fieldset,img,button {
+	border:0;
+}
+ol,ul,li {
+	list-style:none;
+}
+img,fieldset,iframe {
+	border:0 none;
+}
+img,video,audio,object,embed,iframe {
+	max-width:100%;
+	height:auto;
+}
+legend,caption {
+	visibility:hidden;
+	font-size:0;
+	width:0;
+	height:0;
+	line-height:0;
+}
+legend {
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+}
+i,em,address {
+	font-style: normal;
+}
+/* --------------------------------------------------------------------------------FORM--------------------------------------------------------------------------------- */
+button,input,select,textarea {
+	border:0;
+	border-radius:0;
+	background:0 0;
+	cursor:pointer;
+	box-sizing:border-box;
+}
+button {
+	-webkit-appearance:none;
+}
+input[type="text"]::-ms-clear {
+	display: none;
+}
+/* Chrome,Safari,Edge,Opera */
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+	-webkit-appearance:none;
+	margin: 0;
+}
+/* PlaceHolder Setting */
+input::placeholder,textarea::placeholder {
+	font-size:17px;
+	color:#b4b4b4;
+	font-weight:400;
+	opacity:1;
+	vertical-align:middle;
+}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {
+	color:#b4b4b4;
+	font-weight: 400;
+}
+/* Change the color to your own background color */
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active {
+	transition:background-color 5000s ease-in-out 0s;
+	-webkit-transition:background-color 9999s ease-out;
+	-webkit-box-shadow:0 0 0px 1000px white inset !important;
+	-webkit-text-fill-color:#333 !important;
+}
+input,select,textarea {
+	width:auto;
+	padding:10px 12px;
+	background-color:#fff;
+	background-image:none;
+	border-radius:4px;
+	box-shadow:none;
+	box-sizing:border-box;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	color:#787878;
+	opacity:1;
+	vertical-align: middle;
+}
+input:hover {
+	/*border-bottom:1px solid #cccccc;*/
+	opacity:1;
+}
+input.date {
+	background:#fff url(../../images/admin/icon_calendar.png) no-repeat 94% 48%;
+	background-size:20px;
+}
+select {
+	background:#fff url(../../images/admin/arr_dropdown.png) no-repeat 96% center;
+	background-size:20px;
+	appearance:none;
+	-webkit-appearance:none;
+}
+select::-ms-expand {
+		display:none;
+}
+textarea {
+	resize: none;
+}

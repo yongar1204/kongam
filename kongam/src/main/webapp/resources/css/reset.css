@@ -1,0 +1,303 @@
+
+/* --------------------------------------------------------------------------------
+	RESET
+--------------------------------------------------------------------------------- */
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+html, body, div, span, object, iframe, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main, summary, h1, h2, h3, h4, h5, h6, p, blockquote, pre, form, fieldset, legend, input, label, button, textarea, select, textarea, input, table, caption, tbody, tfoot, thead, tr, th, td, b, i, dl, dt, dd, ol, ul, li, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, time, mark, audio, video, a {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: -0.5px;
+	/*font-size:62.5%;font-size:68.75%;font-size:75%;font-size:81.25%;*/
+	/* overflow-y: scroll; */
+	-ms-touch-action: none;
+	scroll-behavior: smooth;
+}
+body {
+	background: #fff;
+	line-height: 1.75;
+	/*color: #374552;*/
+	color: #464b4f;
+	word-break: break-all;
+}
+body, select, input, button, textarea, pre {
+	font-size: 100%;
+	font-family: 'Noto Sans KR','Roboto', sans-serif;
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main, summary {
+	display: block;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: 500;
+}
+cite, em, dfn, address {
+	font-style: 400;
+}
+fieldset, iframe {
+	border: 0 none;
+}
+ins {
+	text-decoration: none;
+}
+mark {
+	background: none !important;
+}
+del {
+	text-decoration: line-through;
+}
+ol, ul, li {
+	list-style: none;
+}
+img, fieldset, iframe {
+	border: 0 none;
+}
+img, video, audio, object, embed, iframe {
+	max-width: 100%;
+	height: auto;
+}
+legend, caption {
+	visibility: hidden;
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+}
+legend {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+i, em, address {
+	font-style: normal;
+}
+table {
+	width: 100%;
+	empty-cells: show;
+	/*border-collapse: separate;*/
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+}
+table th {
+	font-weight: normal;
+}
+table caption {
+	height: 0;
+	font-size: 0.1em;
+	color: #fff;
+	opacity: 0;
+}
+a, a:visited {
+	color: inherit;
+}
+a:link, a:hover {
+	text-decoration: none;
+}
+strong {
+	font-weight:500 !important;
+}
+/* --------------------------------------------------------------------------------
+FORM
+--------------------------------------------------------------------------------- */
+button, input, select, textarea {
+	border: 0;
+	border-radius: 0;
+	background: 0 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+button {
+	-webkit-appearance: none;
+}
+select::-ms-expand {
+	display: none;
+}
+textarea {
+	width: 100%;
+	border: 1px solid #c8c8c8;
+	padding: 8px 10px;
+	background-color: #fff;
+	background-image: none;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	color: #333;
+	opacity: 1;
+	resize: none;
+}
+input[type="text"]::-ms-clear {
+	display: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+/* PlaceHolder Setting */
+input::placeholder, textarea::placeholder {
+	color: #b4b4b4;
+	opacity: 1;
+	vertical-align: middle;
+	letter-spacing: -1px;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color: #b4b4b4;
+}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+	color: #b4b4b4;
+}
+/* Change the color to your own background color */
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+	transition: background-color 5000s ease-in-out 0s;
+	-webkit-transition: background-color 9999s ease-out;
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+	-webkit-text-fill-color: #333 !important;
+}
+input, .selectBox {
+	width: 100%;
+	border: 1px solid #c8c8c8;
+	padding: 8px 10px;
+	background-color: #fff;
+	background-image: none;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	color: #333;
+	opacity: 1;
+	vertical-align: middle;
+}
+input:hover {
+	/*border-bottom: 1px solid #cccccc;*/
+	opacity: 1;
+}
+.selectBox {
+    position: relative;
+}
+select {
+	width: 100%;
+	letter-spacing: -0.08em;
+}
+.selectBox .select-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/*라디오버튼*/
+.radio {
+	/*overflow: hidden;*/
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin: 0;
+	vertical-align: inherit;
+}
+.radio input {
+	overflow: hidden;
+	display: none;
+	width: 0px;
+	height: 0px;
+	border: 0 none;
+	font-size: 0;
+	line-height: 0;
+	clip: rect(0 0 0 0);
+	opacity: 0;
+}
+.radio .ico {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	background: url('../images/btn_radio_off.png') no-repeat 3px;
+	background-size: 16px;
+}
+.radio .text {
+	display: inline-block;
+	padding-left: 24px;
+	font-size: 14px;
+	color: #8e8e8e;
+	letter-spacing: -0.5px;
+}
+.radio input:checked + .ico {
+	background: url('../images/btn_radio_on.png') no-repeat 3px;
+	background-size: 16px;
+}
+/*체크박스*/
+.checkbox {
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.checkbox input {
+	overflow: hidden;
+	display: none;
+	width: 0px;
+	height: 0px;
+	border: 0 none;
+	font-size: 0;
+	line-height: 0;
+	clip: rect(0 0 0 0);
+	opacity: 0;
+}
+.checkbox .ico {
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 22px;
+	height: 22px;
+	background: url(../images/icon-check.png) no-repeat 0 0;
+}
+.checkbox .text {
+	font-weight: 400;
+	margin-left: 28px;
+	color: #8e8e8e;
+}
+.checkbox input:checked ~ .ico {
+	background: url(../images/icon-check-fill.png) no-repeat 0 0;
+}
+.checkbox input:checked ~ .text {
+	color: #000;
+}
+.checkbox .text em {
+	display: block;
+	font-size: 13px;
+	margin-left: 28px;
+	line-height: 16px;
+}

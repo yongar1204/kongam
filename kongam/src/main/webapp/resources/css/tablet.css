@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+/*------------------------ header ------------------------*/
+#gnb-wrap {
+    display: none;
+}
+/*------------------------ contactus ------------------------*/
+.contactus .h2 {
+    float: none;
+}
+.contactus .content .form-group {
+    float: none;
+    max-width: none;
+}
+/*------------------------ business, technology ------------------------*/
+.item .textbox h3 {font-size: 20px; margin: 0;}
+.item .textbox .title {font-size: 30px; margin: 10px 0;}
+.item .textbox .text {font-size: 16px;}
